@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
+
+/* GENERAL */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    justify-content: center;
+    align-items: center;
+    display: grid;
+    height: 100vh;
+    background: #000;
+}
+.container {
+    background: linear-gradient(135deg, #1abc9c, #f1c40f, #e74c3c);
+    animation: colorAnimation 1.5s linear infinite;
+    border-radius: 10px;
+    user-select: none;
+    height: 100px;
+    width: 360px;
+}
+
+/* CLICK CONFIGURATIONS */
+.clock, .container>span {
+    transform: translate(-50%,-50%);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+.clock {
+    background: #1b1b1b;
+    text-align: center;
+    border-radius: 6px;
+    height: 85px;
+    width: 345px;
+}
+.time {
+    background: linear-gradient(135deg, #1abc9c, #f1c40f, #e74c3c);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    letter-spacing: 5px;
+    line-height: 85px;
+    font-size: 3.3rem;
+    color: azure;
+    display: inline;
+}
+
+/* ANIMATION AND LIGHT EFFECT */
+@keyframes colorAnimation {
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+.container>span {
+    background: inherit;
+    border-radius: 10px;
+    z-index: -10;
+    height: 100%;
+    width: 100%;
+}
+.container>span:first-child {
+    filter: blur(5px);
+}
+.container>span:last-child {
+    filter: blur(10px);
+}
